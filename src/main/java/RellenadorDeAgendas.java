@@ -24,8 +24,8 @@ public class RellenadorDeAgendas {
         Contacto contacto11 = new Contacto("Rafael", "725631489");
         Contacto contacto12 = new Contacto("Andres", "785463219");
         Contacto contacto13 = new Contacto("Pedro", "778896352");
-        Contacto contacto14 = new Contacto("Eustaquio", "789654321");
-        Contacto contacto15 = new Contacto("Segismundo", "712345689");
+        Contacto contacto14 = new Contacto("Dani", "789654321");
+        Contacto contacto15 = new Contacto("Fran", "712345689");
 
         agenda0.contactos.add(contacto0);
         agenda0.contactos.add(contacto1);

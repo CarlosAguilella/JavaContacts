@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class View {
     Scanner scanner = new Scanner(System.in);
 
-    int screenSize = 70; //89?
+    int screenSize = 100; //89?
 
     public void mostrarMenu() {
         System.out.println("\033[47m" +"\033[30m"+ StringUtils.center("\uD83C\uDF7D \uD83C\uDF71MENU\uD83C\uDF71 \uD83C\uDF7D", screenSize) + "\033[0m");
@@ -45,16 +45,16 @@ public class View {
 
 
         for (Agenda agenda : agendas) {
-            System.out.println("\033[0m" +"\033[30m"+ StringUtils.center(agenda.nom, screenSize) + "\033[0m");
+            System.out.println("\033[0m" +"\033[30m" + "⭐"+ StringUtils.center(agenda.nom, screenSize) +"⭐" +"\033[0m");
 
             for (Contacto contacto : agenda.contactos) {
                 System.out.println(
                         "\033[42m" +"\033[30m"+
-                        StringUtils.leftPad("->->->->->->->->Nombre:   " +
-                                        StringUtils.rightPad(contacto.nombre, 12) +
-                                        "-------Telf:  " +
+                        StringUtils.leftPad("->->->->->->->-> \uD83C\uDF37 Nombre :   " +
+                                        StringUtils.rightPad(contacto.nombre, 8) +
+                                        "\uD83C\uDF37     \uD83D\uDCDETelf:  " +
                                         StringUtils.rightPad(contacto.telefono, 12) +
-                                        "<-<-<-<-<-<-<-<-" ,
+                                        "\uD83D\uDCDE<-<-<-<-<-<-<-<-" ,
                                 screenSize) +
                         "\033[0m"
                 );
@@ -129,12 +129,15 @@ public class View {
     }
 
     public String eliminarAgenda() {
+        System.out.println("❌❌Que agenda quieres eliminar?❌❌");
         String nombreAgenda = scanner.nextLine();
         return nombreAgenda;
     }
 
     public String eliminarContacto() {
+        System.out.println("❌❌Que contacto quieres eliminar?❌❌");
         String nombreContactoAEliminar = scanner.nextLine();
+        System.out.println("El contacto "+"\033[51m"+"\033[30m"+"\033[41m"+nombreContactoAEliminar+"\033[0m"+" ha sido eliminado");
         return nombreContactoAEliminar;
 
     }
