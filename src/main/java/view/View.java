@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class View {
-    Scanner scanner = new Scanner(System.in);
+    public Scanner scanner = new Scanner(System.in);
 
     int screenSize = 100; //89?
 
@@ -146,5 +146,13 @@ public class View {
         System.out.println("\033[44m" +"\033[30m"+"Muchas gracias por usar JavaContacts"+ "\033[0m");
         System.out.println("\033[44m" +"\033[30m"+"El programa se cerrará en..."+ "\033[0m");
         System.out.println("\033[44m" +"\033[30m"+"3...2...1...\uD83D\uDCA8\uD83D\uDCA8\uD83D\uDCA8"+ "\033[0m");
+    }
+    public void opcionIncorrecta(){
+        System.out.println("\033[41m" +"\033[30m"+"Por favor elige una opcion valida..."+ "\033[0m");
+
+    }
+    public void comingSoon(){
+        System.out.println("\033[42m" +"\033[30m"+"\uD83D\uDE13\uD83D\uDE13Lamentamos tener que decirle que esta opción todavía está en desarrollo\uD83D\uDE2A\uD83D\uDE2A"+ "\033[0m");
+        System.out.println("\033[42m" +"\033[30m"+"Elige otra opción y disculpa las molestias.\uD83D\uDE4F\uD83D\uDE4F"+ "\033[0m");
     }
 }

@@ -11,6 +11,7 @@ public class Model {
     public List<Agenda> agendas = new ArrayList<>();
 
     public void guardarContacto(NuevoContactoDTO datos) {
+        datos.nombre=datos.nombre.substring(0,1).toUpperCase()+datos.nombre.substring(1).toLowerCase();
         agendas.get(datos.numeroAgenda).contactos.add(new Contacto(datos.nombre, datos.telefono));
     }
 
@@ -50,8 +51,8 @@ public class Model {
         }
         return null;
     }
-//hola soy hector
-    public void modificarContactosConMod(Contacto original, ModificacionContactoDTO datos) {  // m=juan
+
+    public void modificarContactosConMod(Contacto original, ModificacionContactoDTO datos) {
         original.nombre = datos.nombre;
         original.telefono = datos.telefono;
     }
