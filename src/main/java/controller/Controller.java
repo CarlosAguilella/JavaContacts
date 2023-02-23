@@ -61,7 +61,12 @@ public class Controller {
 
 
                 }else if (opcion == 9) {
+                    view.cerrarApp();
                     break;
+
+                } else if (opcion == 10) {
+                    System.out.println("\uD83D\uDE13\uD83D\uDE13Lamentamos tener que decirle que esta opción todavía está en desarrollo\uD83D\uDE2A\uD83D\uDE2A");
+                    System.out.println("Elige otra opción y disculpa las molestias.\uD83D\uDE4F\uD83D\uDE4F");
 
                 } else {
                     System.out.println("Por favor elige una opcion valida...");

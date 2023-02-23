@@ -27,7 +27,7 @@ public class View {
         System.out.println("\033[45m" +"\033[30m"+ StringUtils.rightPad("       7\uFE0F⃣. \uD83D\uDE35\u200D\uD83D\uDCABeliminar agenda\uD83D\uDE35\u200D\uD83D\uDCAB", screenSize) + "\033[0m");
         System.out.println("\033[45m" +"\033[30m"+ StringUtils.rightPad("       8\uFE0F⃣. \uD83D\uDD1Celiminar contacto\uD83D\uDD1C", screenSize) + "\033[0m");
         System.out.println("\033[45m" +"\033[30m"+ StringUtils.rightPad("       9\uFE0F⃣. ❌cerrar programa❌", screenSize) + "\033[0m");
-        System.out.println("\033[45m" +"\033[30m"+ StringUtils.rightPad("       1\uFE0F⃣0\uFE0F⃣. ❌coming soon❌", screenSize) + "\033[0m");
+        System.out.println("\033[45m" +"\033[30m"+ StringUtils.rightPad("       1\uFE0F⃣0\uFE0F⃣. \uD83C\uDD95coming soon\uD83C\uDD95", screenSize) + "\033[0m");
 
 
 
@@ -92,18 +92,18 @@ public class View {
     public void mostrarListaAgendas(List<Agenda> agendas) {
         System.out.println("\033[43m" +"\033[30m"+ "ESTAS SON TUS AGENDAS" + "\033[0m");
 
-        agendas.forEach(agenda -> System.out.println("\033[45m" +"\033[30m"+ agenda.nom + " " + "\033[51m" + "(" + agenda.contactos.size() + ")" + "\033[0m"));
+        agendas.forEach(agenda -> System.out.println("\033[44m" +"\033[30m"+ agenda.nom + " " + "\033[51m" + "(" + agenda.contactos.size() + ")" + "\033[0m"));
     }
 
     public String pedirQueBusca() {
-        System.out.println("Que quieres buscar?");
+        System.out.println("\033[43m" +"\033[30m"+"Que contacto quieres buscar?"+ "\033[0m");
         String query = scanner.nextLine();
         return query;
     }
 
     public void muestraContactos(List<Contacto> contactos) {
         if (contactos.isEmpty()) {
-            System.out.println("No se encontraron contactos");
+            System.out.println("\033[46m" +"\033[30m"+"No se encontraron contactos"+ "\033[0m");
         } else {
             for (Contacto contacto : contactos){
                 System.out.println(contacto.nombre + " : " + contacto.telefono);
@@ -112,15 +112,15 @@ public class View {
     }
 
     public String pedirContactoAModificar() {
-        System.out.println("Que contacto quieres modificar?");
+        System.out.println("\033[46m" +"\033[30m"+"Que contacto quieres modificar?"+ "\033[0m");
         String mod = scanner.nextLine();
         return mod;
     }
 
     public ModificacionContactoDTO pedirDatosAModificar() {
-        System.out.println("Pon el nuevo nombre del contacto");
+        System.out.println("\033[46m" +"\033[30m"+"Pon el nuevo nombre del contacto"+ "\033[0m");
         String nombre = scanner.nextLine();
-        System.out.println("Pon el nuevo telefono del contacto");
+        System.out.println("\033[46m" +"\033[30m"+"Pon el nuevo telefono del contacto"+ "\033[0m");
         String telefono = scanner.nextLine();
         return new ModificacionContactoDTO(nombre, telefono);
     }
@@ -130,16 +130,21 @@ public class View {
     }
 
     public String eliminarAgenda() {
-        System.out.println("❌❌Que agenda quieres eliminar?❌❌");
+        System.out.println("\033[46m" +"\033[30m"+"❌❌Que agenda quieres eliminar?❌❌"+ "\033[0m");
         String nombreAgenda = scanner.nextLine();
         return nombreAgenda;
     }
 
     public String eliminarContacto() {
-        System.out.println("❌❌Que contacto quieres eliminar?❌❌");
+        System.out.println("\033[45m" +"\033[30m"+"❌❌Que contacto quieres eliminar?❌❌"+ "\033[0m");
         String nombreContactoAEliminar = scanner.nextLine();
-        System.out.println("El contacto "+"\033[51m"+"\033[30m"+"\033[41m"+nombreContactoAEliminar+"\033[0m"+" ha sido eliminado");
+        System.out.println("\033[45m" +"\033[30m"+"El contacto "+"\033[51m"+"\033[30m"+"\033[41m"+nombreContactoAEliminar+"\033[0m"+"\033[45m" +"\033[30m"+" ha sido eliminado"+"\033[0m");
         return nombreContactoAEliminar;
 
+    }
+    public void cerrarApp(){
+        System.out.println("\033[44m" +"\033[30m"+"Muchas gracias por usar JavaContacts"+ "\033[0m");
+        System.out.println("\033[44m" +"\033[30m"+"El programa se cerrará en..."+ "\033[0m");
+        System.out.println("\033[44m" +"\033[30m"+"3...2...1...\uD83D\uDCA8\uD83D\uDCA8\uD83D\uDCA8"+ "\033[0m");
     }
 }
