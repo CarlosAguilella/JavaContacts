@@ -15,6 +15,7 @@ public class View {
 
     int screenSize = 100; //89?
 
+
     public void mostrarMenu() {
         System.out.println("\033[47m" +"\033[30m"+ StringUtils.center("\uD83C\uDF7D \uD83C\uDF71MENU\uD83C\uDF71 \uD83C\uDF7D", screenSize) + "\033[0m");
         System.out.println("\033[45m" +"\033[30m"+ StringUtils.rightPad("       1\uFE0F⃣. \uD83D\uDD0Dver contactos\uD83D\uDD0D", screenSize) + "\033[0m");
